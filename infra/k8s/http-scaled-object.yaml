@@ -1,0 +1,24 @@
+kind: HTTPScaledObject
+apiVersion: http.keda.sh/v1alpha1
+metadata:
+  name: heuristic-sneha-341270b339-scaler
+  namespace: apps-release
+spec:
+  hosts:
+    - cc1fbde45ead-in-south-01.mayson.dev
+  pathPrefixes:
+    - /us-west-1-backstractelb-0d1d37-coll-ef7fa097f692475a949b209099acc03f/ # e.g. /infallible-naveen-... heuristic-sneha-341270b339/
+  scaleTargetRef:
+    name: heuristic-sneha-341270b339-depl
+    kind: Deployment
+    apiVersion: apps/v1
+    service: heuristic-sneha-341270b339-srv # e.g. coll-8a2a...-srv
+    port: 80
+  replicas:
+    min: 0
+    max: 10
+  scaledownPeriod: 300 # 5 min
+  scalingMetric:
+    requestRate:
+      targetValue: 100
+      window: 1m

@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: env-configmap-coll-ef7fa097f692475a949b209099acc03f-deployment-871a72c1-6e3f-40ab-b7c3-76c264257b55
+  namespace: apps-release
+data:
+    AUTH_P_ENABLED_METHODS: "PASS,SSO_GOOGLE"
+    AUTH_P_EXISTING_DB: "true"
+    AUTH_P_TABLE_NAME: "users"
+    AUTH_P_IDENTITY_KEY: "email"
+    AUTH_P_PASSWORD_KEY: "password"
+    AUTH_P_ENCRYPTION: "HS256"
+    AUTH_P_SECRET_KEY: "Oh224Kle6dI3R_GvKHbcCV9dpis-zKIum5euj6vibtU="
+    AUTH_P_TOKEN_EXPIRY: "86400"
+    AUTH_P_TABLE_OPTIONS: ""
