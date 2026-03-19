@@ -107,7 +107,7 @@ jobs:
         kubectl apply -n $NAMESPACE -f "$INFRA_DIR/service.yaml"
 
         # ✅ Restart deployment (FIXED)
-        kubectl rollout restart deployment beautiful-rajesh-d234d024ad-depl -n $NAMESPACE
+        #kubectl rollout restart deployment beautiful-rajesh-d234d024ad-depl -n $NAMESPACE
 
         # ✅ Debug output
         echo "📦 Deployments:"
